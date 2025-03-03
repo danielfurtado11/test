@@ -4,7 +4,7 @@ import time
 
 st.set_page_config(
     page_title="NEXI Meetings",    # ✅ Título da página (aparece na aba do navegador)
-    page_icon="https://raw.githubusercontent.com/danielfurtado11/test/main/logo2_icon.png",
+    page_icon="https://raw.githubusercontent.com/danielfurtado11/test/main/logo2_icon2.png",
     layout="wide",           # ✅ "wide" (tela cheia) ou "centered" (padrão, layout centralizado)
     initial_sidebar_state="collapsed",  # ✅ Estado inicial da barra lateral ("auto", "expanded", "collapsed")
     menu_items={             # ✅ Personalizar o menu do canto superior direito
