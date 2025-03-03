@@ -18,8 +18,8 @@ st.set_page_config(
 person = "Daniel"
 
 row = st.columns(1)
-row[0].image("logo2.png", width=250)
-row[0].markdown(f"## 👋 Welcome {person}!!")
+row[0].image("logo2.png", width=150)
+row[1].markdown(f"## 👋 Welcome {person}!!")
 
 pages_dir = "pages"
 
