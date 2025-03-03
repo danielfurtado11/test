@@ -16,30 +16,17 @@ st.set_page_config(
 
 
 person = "Daniel"
-
-import base64
-
-def get_image_base64(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-
-person = "Daniel"
-img_base64 = get_image_base64("logo2.png")
-
-st.markdown(
-    f"""
-    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 10px;">
-        <img src="data:image/png;base64,{img_base64}" alt="Logo" width="150">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+row = st.columns(1)
+row[0].image("logo2.png", width=150)
+st.write("")
+st.write("")
+st.write("")
 
 pages_dir = "pages"
 
 def listar_paginas():
     return sorted([f for f in os.listdir(pages_dir) if f.endswith(".py")])
+
 
 st.title("Relatórios de Reunião 📄")
 
