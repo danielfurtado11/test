@@ -19,15 +19,11 @@ person = "Daniel"
 
 logo_col, text_col, _ = st.columns([1, 4, 1])
 
-st.markdown(
-    f"""
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="logo2.png" alt="Logo" width="150">
-        <h2>👋 Welcome {person}!!</h2>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+with logo_col:
+    st.image("logo2.png", width=150)
+with text_col:
+    st.markdown(f"#### 👋 Welcome {person}!!")
+
 
 
 pages_dir = "pages"
