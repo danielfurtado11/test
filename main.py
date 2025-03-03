@@ -2,16 +2,15 @@ import streamlit as st
 import os
 import time
 
-# Diretório onde estão os relatórios
+st.set_page_config(layout="wide")
+
 pages_dir = "pages"
 
-# Criar uma função para listar os arquivos no diretório pages/
 def listar_paginas():
     return sorted([f for f in os.listdir(pages_dir) if f.endswith(".py")])
 
 st.title("Relatórios de Reunião 📄")
 
-# Criar links para cada página
 paginas_disponiveis = listar_paginas()
 
 if not paginas_disponiveis:
