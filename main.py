@@ -28,17 +28,42 @@ def listar_paginas():
     return sorted([f for f in os.listdir(pages_dir) if f.endswith(".py")])
 
 
-st.title("Relatórios de Reunião 📄")
+st.title("📄 Relatórios de Reunião:")
 
 paginas_disponiveis = listar_paginas()
 
 if not paginas_disponiveis:
     st.warning("Nenhum relatório encontrado na pasta 'pages/'. Adicione novos arquivos e aguarde a atualização.")
 
+st.markdown(
+    """
+    <style>
+    .custom-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f0f2f6;
+        border: 2px solid #0073e6;
+        border-radius: 8px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .custom-button:hover {
+        background-color: #0073e6;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Criar links personalizados como botões estilizados
 for page in paginas_disponiveis:
     page_name = page.replace(".py", "").replace("_", " ").title()
-    st.page_link(f"{pages_dir}/{page}", label=page_name)
-
+    st.markdown(f'<a href="/{pages_dir}/{page}" target="_self" class="custom-button">{page_name}</a>', unsafe_allow_html=True)
 
 if set(listar_paginas()) != set(paginas_disponiveis):
     st.rerun()  # Recarrega a página automaticamente se novos arquivos forem detectados
