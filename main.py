@@ -30,7 +30,6 @@ st.markdown(
     f"""
     <div style="display: flex; align-items: center; justify-content: flex-start; gap: 10px;">
         <img src="data:image/png;base64,{img_base64}" alt="Logo" width="150">
-        <h4>          Welcome {person}!!</h2>
     </div>
     """,
     unsafe_allow_html=True
