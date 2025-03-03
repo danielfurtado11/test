@@ -2,7 +2,17 @@ import streamlit as st
 import os
 import time
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="NEXI Meetings",    # ✅ Título da página (aparece na aba do navegador)
+    page_icon="📊",          # ✅ Ícone da página (pode ser emoji ou URL de imagem)
+    layout="wide",           # ✅ "wide" (tela cheia) ou "centered" (padrão, layout centralizado)
+    initial_sidebar_state="collapsed",  # ✅ Estado inicial da barra lateral ("auto", "expanded", "collapsed")
+    menu_items={             # ✅ Personalizar o menu do canto superior direito
+        "Get Help": "https://docs.streamlit.io",
+        "Report a bug": "https://github.com/streamlit/streamlit/issues",
+        "About": "Este é um app feito com Streamlit!"
+    }
+)
 
 pages_dir = "pages"
 
