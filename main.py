@@ -17,9 +17,21 @@ st.set_page_config(
 
 person = "Daniel"
 
-row = st.columns(3)
-row[0].image("logo2.png", width=150)
-row[1].markdown(f"## 👋 Welcome {person}!!")
+logo_col, text_col, _ = st.columns([1, 4, 1])
+
+with logo_col:
+    st.image("logo2.png", width=150)
+with text_col:
+    st.markdown(
+        f"""
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="logo2.png" alt="Logo" width="150">
+            <h2>👋 Welcome {person}!!</h2>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 pages_dir = "pages"
 
