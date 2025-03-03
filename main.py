@@ -38,7 +38,6 @@ if not paginas_disponiveis:
 for page in paginas_disponiveis:
     page_name = page.replace(".py", "").replace("_", " ").title()
     st.page_link(f"{pages_dir}/{page}", label=page_name)
-    st.write("OK")
 
 
 if set(listar_paginas()) != set(paginas_disponiveis):
