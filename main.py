@@ -21,8 +21,6 @@ for page in paginas_disponiveis:
     page_name = page.replace(".py", "").replace("_", " ").title()
     st.page_link(f"{pages_dir}/{page}", label=page_name)
 
-# Simular atualização automática verificando mudanças a cada X segundos
-with st.spinner("Verificando novos relatórios..."):
-    time.sleep(5)  # Aguarda 5 segundos antes de verificar novamente
-    if set(listar_paginas()) != set(paginas_disponiveis):
-        st.rerun()  # Recarrega a página automaticamente se novos arquivos forem detectados
+
+if set(listar_paginas()) != set(paginas_disponiveis):
+    st.rerun()  # Recarrega a página automaticamente se novos arquivos forem detectados
