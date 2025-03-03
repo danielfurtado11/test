@@ -17,12 +17,13 @@ st.set_page_config(
 
 person = "Daniel"
 
-logo_col, text_col, _ = st.columns([1, 4, 1])
+logo_col, text_col = st.columns([1, 5])
 
+# Adicionar conteúdo
 with logo_col:
     st.image("logo2.png", width=150)
 with text_col:
-    st.markdown(f"#### 👋 Welcome {person}!!")
+    st.markdown(f"## 👋 Welcome {person}!!")
 
 
 
