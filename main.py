@@ -14,6 +14,13 @@ st.set_page_config(
     }
 )
 
+
+person = "Daniel"
+
+row = st.columns(1)
+row[0].image("logo.png", width=250)
+row[0].markdown(f"## 👋 Welcome {person}!!")
+
 pages_dir = "pages"
 
 def listar_paginas():
